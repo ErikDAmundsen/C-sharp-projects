@@ -42,9 +42,7 @@ namespace Boolean_car_insurance
             Console.ReadLine();
 
 
-
-
-
+            
         }
     }
 }
