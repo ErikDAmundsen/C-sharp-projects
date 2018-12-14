@@ -13,24 +13,26 @@ namespace While_loop
             Console.WriteLine("Press Enter to initialize countdown!");
             Console.ReadLine();
             int count = 10;
-            while (count > 0)
+            bool liftoff = false;
+            while (liftoff == false)
             {
                 Console.WriteLine(count);
                 count = count - 1;
                 System.Threading.Thread.Sleep(500);
                 if (count <= 0)
                 {
-                    Console.WriteLine("LIFT OFFFFFF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                    System.Threading.Thread.Sleep(700);
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.Clear();
-                    System.Threading.Thread.Sleep(1000);
+                    liftoff = true; 
+                    
 
 
                 }
             }
-
+            Console.WriteLine("LIFT OFFFFFF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.Threading.Thread.Sleep(700);
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+            System.Threading.Thread.Sleep(1000);
             //trip begins color change
             Console.WriteLine("If you forgot anything important back on earth now is the time to let us know");
             System.Threading.Thread.Sleep(1000);
