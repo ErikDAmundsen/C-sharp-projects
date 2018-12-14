@@ -28,26 +28,21 @@ namespace While_loop
                     System.Threading.Thread.Sleep(1000);
 
 
-
-
                 }
             }
+
+            //trip begins color change
             Console.WriteLine("If you forgot anything important back on earth now is the time to let us know");
             System.Threading.Thread.Sleep(1000);
             bool forgot = false;
    
 
-
-        
-
             do
             {
 
-
-
-                Console.WriteLine("Are you sure you didn't forget anything?");
-                //forgot = bool.Parse(Console.ReadLine());
-//
+                Console.WriteLine("Are you sure you didn't forget anything? Yes or no?");
+           
+// changing true false to yes no
                 string answer = Console.ReadLine();
                 if
 
@@ -63,7 +58,7 @@ namespace While_loop
                     System.Threading.Thread.Sleep(1000);
                     Environment.Exit(-1);
                 }
-//
+
             } while (forgot == false );
 
             Console.WriteLine("OH NO, Back to earth");
