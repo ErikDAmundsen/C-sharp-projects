@@ -23,10 +23,9 @@ namespace _100
                 if (int.TryParse(DayInput, out Dayint))
                     Console.WriteLine("\nYou will die on " + WeekArray[Dayint]);
                 
-            else
-                Console.WriteLine("You didnt enter a valid number so you were assigned Wednesday");
+           
             }
-            catch (System.IndexOutOfRangeException )
+            catch (IndexOutOfRangeException )
             {
                 
                  Console.WriteLine("\nYou didnt enter a valid number so you were assigned Wednesday");
@@ -42,12 +41,12 @@ namespace _100
                 int TimeInput = int.Parse(Console.ReadLine());
                 Console.WriteLine("\nYou will die at " + TimeArray[TimeInput] + " p.m.");
             }
-            catch ( System.FormatException)
+            catch ( FormatException)
             {
                 Console.WriteLine("You didnt enter a valid number so you are assigned Midnight");
                     
                     }
-            catch (System.IndexOutOfRangeException)
+            catch (IndexOutOfRangeException)
             { Console.WriteLine("You didnt enter a valid number so you are assigned Midnight"); }
 
             //Cause of death
@@ -60,9 +59,9 @@ namespace _100
 
                 Console.WriteLine("You die from " + COD[CODint]);
             }
-            catch (System.FormatException)
+            catch (FormatException)
             { Console.WriteLine("Since you neglected to enter a valid number you will live forever sitting at this computer without interenet access"); }
-            catch (System.IndexOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             { Console.WriteLine("Since you neglected to enter a valid number you will live forever sitting at this computer without interenet access"); }
 
 
