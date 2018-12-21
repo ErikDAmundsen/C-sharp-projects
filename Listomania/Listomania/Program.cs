@@ -38,7 +38,7 @@ namespace Listomania
 
                 //2.Create an infinite loop.
                 bool HaveAJob = false;
-  Console.WriteLine("Do you have any job experience in this field? True of False");
+  Console.WriteLine("\nDo you have any job experience in this field? True of False");
             while (HaveAJob == false)
             {
               
@@ -66,7 +66,7 @@ namespace Listomania
             }
 
             if (HaveAJob == true)
-                Console.WriteLine("Congrautlations, You're hired!");
+                Console.WriteLine("Congrautlations, You're hired!\n");
 
 
 
@@ -81,7 +81,7 @@ namespace Listomania
             for (int A = 0; A< 365;A++)
             { Console.WriteLine(A); }
 
-            Console.WriteLine("Happy New Year! its 2020");
+            Console.WriteLine("Happy New Year! its 2020\n");
             //5.Create a loop where the comparison used to determine whether to continue iterating the loop is a “<=” operator.
             int hoursWorked = 0;
             while (hoursWorked < 8)
@@ -99,7 +99,7 @@ namespace Listomania
 
             //6.Create a List of strings where each item in the list is unique.Ask the user to select text to search for in the List.Create a loop that iterates through the list and then displays the index of the array that contains matching text on the screen.
 
-            List<string> flavors = new List<string>() { "chocolate", "vanilla", "moose tracks", "mint chocolate chip", "strawberry", "salted carmel", "reeses", "neopolitan", "fudge", "blackberry", "coffee", "peanut butter", "dulce de leche", "mexican chocolate", "rum raisin", "cardamom" };
+            List<string> flavors = new List<string>() { "chocolate", "vanilla", "moose tracks", "mint chocolate chip", "strawberry", "salted carmel", "reeses", "neopolitan", "fudge", "blackberry", "coffee", "peanut butter", "dulce de leche", "mexican chocolate", "rum raisin", "cardamom", "coffee"};
             Console.WriteLine("Please choose a flavor from the list below then type it in and press enter to find its location");
             flavors.ForEach(Console.WriteLine);
 
@@ -110,10 +110,7 @@ namespace Listomania
                 foreach (string flavor in flavors  )
            
             {
-                
-                    
-                  
-
+        
 
                 if (inputFlavor == flavor)
                 { findFlavor = true;
@@ -131,15 +128,69 @@ namespace Listomania
 
 
 
-            Console.ReadLine();
+          
 
 
-            
+
 
 
 
             //9.Create a List of strings that has at least two identical strings in the List. Ask the user to select text to search for in the List.Create a loop that iterates through the list and then displays the indices of the array that contain matching text on the screen.
-            List<string> people = new List<string> () {"Mike Strunk","Mike Shapiro","Lindsay Alexander","","","","", }
+            List<string> people = new List<string>() { "Mike S", "Mike S", "Lindsay ", "Erik ", "Jeremy", "Erik", "Aaron ", };
+
+            people.ForEach(Console.WriteLine);
+
+            Console.WriteLine("Please enter one of the names from the list to see its index/indeces");
+            var nameEntered = (Console.ReadLine());
+
+           
+
+
+            //for (int indx = 0; indx < people.Count; indx++)
+            //    if (nameEntered == people[indx])
+            //    {
+            //        Console.WriteLine(" The index/indeces of the name(s) you entered is: " + indx);
+            //    }
+            
+
+
+            //foreach(string item in people)
+            //{
+            //    if (item.Contains(nameEntered))
+            //    { return item as  answer; }
+            //}
+
+            //if (people.Contains(nameEntered))
+            //  {
+            //      var newList =people.Where(x => x.Contains(nameEntered)).ToList();
+            //  }
+
+
+            //  Console.WriteLine("The index/indeces of the name you entered is " + newlist);
+
+
+
+
+            //int indeces = people.IndexOf(nameEntered);
+
+
+
+            //            foreach (string person in people)
+            //            {
+
+            //for (int indx=0; indx  < people.Count; indx++ )
+            //                if (nameEntered == people[indx])
+            //                {
+            //   Console.WriteLine(" The index/indeces of the name(s) you entered is: " + indx);
+            //                } 
+
+            //            }
+
+
+
+            Console.ReadLine();
+
+
 
             //10.Add code to that above loop that tells a user if they put in text that isn’t in the List.
 
