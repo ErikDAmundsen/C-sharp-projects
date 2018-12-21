@@ -136,55 +136,30 @@ namespace Listomania
 
 
             //9.Create a List of strings that has at least two identical strings in the List. Ask the user to select text to search for in the List.Create a loop that iterates through the list and then displays the indices of the array that contain matching text on the screen.
-            List<string> people = new List<string>() { "Mike S", "Mike S", "Lindsay ", "Erik ", "Jeremy", "Erik", "Aaron ", };
+            List<string> people = new List<string>() { "Mike S", "Mike S", "Lindsay ", "Erik", "Jeremy", "Erik", "Aaron ", };
 
             people.ForEach(Console.WriteLine);
 
             Console.WriteLine("Please enter one of the names from the list to see its index/indeces");
             var nameEntered = (Console.ReadLine());
 
-           
+            bool exists = false;
 
 
-            //for (int indx = 0; indx < people.Count; indx++)
-            //    if (nameEntered == people[indx])
-            //    {
-            //        Console.WriteLine(" The index/indeces of the name(s) you entered is: " + indx);
-            //    }
-            
+            for (int indx = 0; indx < people.Count; indx++)
+            {
+                if (nameEntered == people[indx])
+
+                {  Console.WriteLine(" The index of the name you entered is: " + indx);
+                exists = true;
+            }
+            else if(indx == people.Count & exists == false)
+            {
+                    Console.WriteLine("That name is not on the list");
+
+            }  
 
 
-            //foreach(string item in people)
-            //{
-            //    if (item.Contains(nameEntered))
-            //    { return item as  answer; }
-            //}
-
-            //if (people.Contains(nameEntered))
-            //  {
-            //      var newList =people.Where(x => x.Contains(nameEntered)).ToList();
-            //  }
-
-
-            //  Console.WriteLine("The index/indeces of the name you entered is " + newlist);
-
-
-
-
-            //int indeces = people.IndexOf(nameEntered);
-
-
-
-            //            foreach (string person in people)
-            //            {
-
-            //for (int indx=0; indx  < people.Count; indx++ )
-            //                if (nameEntered == people[indx])
-            //                {
-            //   Console.WriteLine(" The index/indeces of the name(s) you entered is: " + indx);
-            //                } 
-
-            //            }
 
 
 
