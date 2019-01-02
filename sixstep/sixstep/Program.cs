@@ -28,7 +28,7 @@ namespace sixstep
 
             //string
          
-            Console.WriteLine("Type the number that equals one dozen as a decimal.");
+            Console.WriteLine("Type the number that equals one dozen as a string.");
             string dozen3 = (Console.ReadLine());
 
 
