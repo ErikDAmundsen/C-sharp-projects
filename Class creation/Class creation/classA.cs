@@ -8,7 +8,7 @@ namespace Class_creation
 {
      class ClassA
     {
-        public static int Hourly(int num1, int num2)
+        public  int Hourly(int num1, int num2)
         {
 
             return num1 / num2;
@@ -18,13 +18,13 @@ namespace Class_creation
 
         }
 
-        public static int Taxes(int num1, int num2)
+        public  int Taxes(int num1, int num2)
         {
             return num1 * num2;
 
         }
 
-        public static int Lifetime(int num1, int num2)
+        public  int Lifetime(int num1, int num2)
         {
             return num1 * num2;
 
