@@ -12,21 +12,28 @@ namespace blackjack
         {
 
             Deck deck = new Deck();
-            deck = Shuffle(deck);
-           
-            foreach( Card card in deck.Cards)
+            int timesShuffled = 0;
+            deck = Shuffle( deck,out timesShuffled, 3);
+
+
+            foreach ( Card card in deck.Cards)
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
             }
             Console.WriteLine(deck.Cards.Count);
-            //Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
+            Console.WriteLine("Times shuffled: {0}", timesShuffled);
 
             Console.ReadLine();
 
         }
 
-        public static Deck Shuffle(Deck deck)
+        public static Deck Shuffle(Deck deck,out int timesShuffled, int times =1)
         {
+
+            timesShuffled = 0;
+            for (int i=0;i<times;i++)
+            {
+                timesShuffled++;
             List<Card> TempList = new List<Card>();
             Random random = new Random();
 
@@ -39,8 +46,21 @@ namespace blackjack
             }
 
             deck.Cards = TempList;
+
+            }
+
             return deck;
         }
+        //public static Deck Shuffle(Deck deck, int times)
+        //{
+        //    for (int i = 0; i < times; i++)
+        //    {
+        //        deck = Shuffle(deck);
 
+
+        //    }
+        //    return deck;
+
+        //}
     }
 }

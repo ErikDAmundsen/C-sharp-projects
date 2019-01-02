@@ -12,10 +12,10 @@ namespace Class_creation
         {
 
             Console.WriteLine("Enter the number of dollars you earn in a month");
-             double inputA = double.Parse(Console.ReadLine());
+             int inputA = int.Parse(Console.ReadLine());
 
           Console.WriteLine("You earn $" + ClassA.Hourly(inputA, 173) + " an hour.");
-            Console.WriteLine(" On average you pay $" + ClassA.Taxes(inputA, 0.14) + " in taxes per month.");
+            Console.WriteLine(" You earn $" + ClassA.Taxes(inputA, 12) + " a year.");
             Console.WriteLine("At that rate you will earn $" + ClassA.Lifetime(inputA, 516) + " in your lifetime.");
             Console.ReadLine();
      }
