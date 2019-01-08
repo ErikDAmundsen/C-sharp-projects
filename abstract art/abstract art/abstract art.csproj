@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F22BBC15-B656-4DF8-925A-12CE85EBDB56}</ProjectGuid>
+    <ProjectGuid>{CD499FE4-D225-4683-BB4A-E40D4134C41B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>blackjack</RootNamespace>
-    <AssemblyName>blackjack</AssemblyName>
+    <RootNamespace>abstract_art</RootNamespace>
+    <AssemblyName>abstract art</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card.cs" />
-    <Compile Include="Dealer.cs" />
-    <Compile Include="Deck.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TwentOneGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

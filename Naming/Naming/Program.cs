@@ -17,28 +17,28 @@ namespace Naming
             Persons persons1 = new Persons();
             persons1.FirstName = "ERik ";
             persons1.LastName = "Amundsen";
+            //4. Inside of the Main method, instantiate and initialize an Employee object with a first name of "Sample" and a last name of "Student".
 
             Employee employee1 = new Employee();
             
                 employee1.FirstName = "Sample ";
                 employee1.LastName = "Student";
 
-            //base.Employee.SayName.employee1();
-            employee1.SayName();
+           
+            employee1.SayName();//5. Call the superclass method SayName() on the Employee object.
 
-            Console.WriteLine();
+
             Console.ReadLine();
         }
     }
 }
 
 
-//1. Create a class called Person and give it two properties, each of data type string. One called FirstName, the other LastName.
 
-//2. Give this class a void method called SayName() that takes no parameters and simply writes the person's full name to the console in the format of: "Name: [full name]".
 
-//3. Create another class called Employee and have it inherit from the Person class. Give the Employee class a property called Id and have it be of data type int.
 
-//4. Inside of the Main method, instantiate and initialize an Employee object with a first name of "Sample" and a last name of "Student".
 
-//5. Call the superclass method SayName() on the Employee object.
+
+
+
+
