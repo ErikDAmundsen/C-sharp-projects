@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace abstract_art
 {
+    //3. Create another class called Employee and have it inherit from the Person class.
     class Employee : Person
     {
-        public  void SayName()
+        //4. Implement the SayName() method inside of the Employee class.
+        public new void SayName()
         {
-
+            Console.WriteLine("Name:" + FirstName + LastName);
 
         }
     }
 }
+
+
+
+
+
+
+
+

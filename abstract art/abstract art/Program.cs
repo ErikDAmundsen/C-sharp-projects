@@ -12,9 +12,13 @@ namespace abstract_art
         {
             Employee employee1 = new Employee()
             {
-                FirstName = 
-            }
-          
+                FirstName = "Sample ",
+                LastName = "Student"
+            };
+
+            //5. Inside the Main() method, instantiate an Employee object with firstName "Sample" and lastName "Student". Call the SayName() method on the object.
+            employee1.SayName();
+            Console.ReadLine();
         }
     }
 }
