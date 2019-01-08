@@ -10,6 +10,9 @@ namespace abstract_art
     {
         static void Main(string[] args)
         {
+
+            IQuittable Quitter = new Employee(); //3A. Use polymorphism to create an object of type IQuittable and call the Quit() method on it. Hint: an object can be of an interface type if it implements that specific interface.
+
             Employee employee1 = new Employee()
             {
                 FirstName = "Sample ",
@@ -18,7 +21,14 @@ namespace abstract_art
 
             //5. Inside the Main() method, instantiate an Employee object with firstName "Sample" and lastName "Student". Call the SayName() method on the object.
             employee1.SayName();
+            employee1.Quit();
+            Quitter.Quit();
             Console.ReadLine();
         }
     }
 }
+
+
+
+
+
