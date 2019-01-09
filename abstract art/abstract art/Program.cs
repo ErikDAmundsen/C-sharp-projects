@@ -31,4 +31,3 @@ namespace abstract_art
 
 
 
-
