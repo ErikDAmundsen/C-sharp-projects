@@ -6,31 +6,38 @@ using System.Threading.Tasks;
 
 namespace come_pare
 {
-   public class Employee
+    public class Employee
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        
 
         public static bool operator ==(Employee emp1, Employee emp2)
         {
-            bool status = false;
-            
-            if (emp1 == emp2)
+          
+
+            if (emp1.ID == emp2.ID)
             {
-                status = true;
+               return  true;
             }
-            return status;
+           else
+            {
+                return false;
+            }
         }
 
             public static bool operator !=(Employee emp1, Employee emp2)
         {
-            bool status = false;
             
-            if (emp1 == emp2)
+            
+            if (emp1.ID == emp2.ID)
             {
-                status = true;
+                return  false;
             }
-            return status;
+            else
+            {
+                return true;
+            }
 
         }
 
