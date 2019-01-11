@@ -10,37 +10,58 @@ namespace generik
     {
         static void Main(string[] args)
         {
-            Employee<string> employee1 = new Employee<string>();
-           List <string> Employee<string>.Things 
-                {
-
+            //3. Instantiate an Employee object with type "string" as its generic parameter.Assign a list of strings as the property value of Things.
+            Employee<string> employeestring = new Employee<string>()
+            {
+                Things = new List<string>()
+            {
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 
             }
+            };
 
-            
+
+            //4. Instantiate an Employee object with type "int" as its generic parameter.Assign a list of integers as the property value of Things.
+            Employee<int> employeeint = new Employee<int>()
+            {
+                Things = new List<int>()
+            { 1,2,3,4,5,6,7 }
+            };
+
+
+
+
+            //5. Create a loop that prints all of the Things to the Console.
+            foreach (string day in employeestring.Things)
+            {
+                Console.WriteLine(day);
+            }
+
+
+            foreach (int numb in employeeint.Things)
+            {
+                Console.WriteLine(numb);
+
+            }
+            Console.ReadLine();
+
+
+
+
+
+
 
         }
     }
 }
 
-//1. Make the Employee class take a generic type parameter.
-
-//2. Add a property to the Employee class called "things" and have its data type be a generic list matching the generic type of the class.
-
-//3. Instantiate an Employee object with type "string" as its generic parameter.Assign a list of strings as the property value of Things.
-
-//4. Instantiate an Employee object with type "int" as its generic parameter.Assign a list of integers as the property value of Things.
-
-//5. Create a loop that prints all of the Things to the Console.
 
 
-//Compare obj = new Compare();
-//obj.Checck(employee1.ID,employee2.ID)
 
-//    Class Compare <AnyDatatype>
-//    {
-//    public bool Check (int num1, int num2)
-//    {
-//return employee1.ID.Equals(employee2.ID)
 
-    //instead of int data type use object data type
+
+
+
+
+
+
