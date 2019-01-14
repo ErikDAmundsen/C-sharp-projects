@@ -102,13 +102,13 @@ List<Employee> JoeFor = new List<Employee>();
 
             
             
-          List<Employee> LambdaJoe =  RollCall.Where(x => x.FirstName == "Joe").ToList();
+          List<Employee> LambdaJoe =  RollCall.Where(x => x.FirstName == "Joe").ToList();//3. Do the same thing again, but this time with a lambda expression.
                
 
             
 
 
-            List<Employee> Over5 = RollCall.Where(x => x.ID > 5).ToList();
+            List<Employee> Over5 = RollCall.Where(x => x.ID > 5).ToList();//4. Using a lambda expression, make a list of all employees with an Id number greater than 5
             foreach (Employee employee in Over5)
             {
                 Console.WriteLine(employee.FirstName + "\n" + employee.LastName +"\n" + employee.ID + "\n");
@@ -126,8 +126,8 @@ List<Employee> JoeFor = new List<Employee>();
 
 
 
-//3. Do the same thing again, but this time with a lambda expression.
 
-//4. Using a lambda expression, make a list of all employees with an Id number greater than 5
+
+
 
 
