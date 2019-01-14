@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace blackjack
 { 
-  public  class Card
+  public  struct Card
     {
 
      
