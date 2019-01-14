@@ -26,6 +26,12 @@ namespace @struct
 
             Console.WriteLine("It took me " +amo.Amount +" tries to remember to put the m after the decimal"); //3. Print this amount to the console.
             Console.ReadLine();
+
+
+            List<int> numberList = new List<int>() { 1, 2, 3, 535, 342, 23 };
+
+            Console.WriteLine(numberList.Sum());
+            Console.ReadLine();
         }
     }
 }
