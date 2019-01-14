@@ -12,7 +12,7 @@ namespace leg_of_lambda
 
        
         {
-          
+          //1. In the Main() method, create a list of at least 10 employees.Each employee should have a first and last name, as well as an Id.At least two employees should have the first name "Joe".
 
             Employee employee1 = new Employee
             { FirstName = "Erik",
@@ -83,7 +83,7 @@ namespace leg_of_lambda
             
             };
 
-
+//2. Using a foreach loop, create a new list of all employees with the first name "Joe".
 List<Employee> JoeFor = new List<Employee>();
 
             foreach (Employee employee in RollCall)
@@ -94,9 +94,7 @@ List<Employee> JoeFor = new List<Employee>();
 
                 }
             }
-            foreach (Employee employee in JoeFor)
-            { Console.WriteLine(employee.ID);
-            }
+          
 
 
 
@@ -107,15 +105,15 @@ List<Employee> JoeFor = new List<Employee>();
           List<Employee> LambdaJoe =  RollCall.Where(x => x.FirstName == "Joe").ToList();
                
 
-            foreach (Employee employee in LambdaJoe)
-            {
-                Console.WriteLine(employee.FirstName +"\n" + employee.ID);
-            }
-
+            
 
 
             List<Employee> Over5 = RollCall.Where(x => x.ID > 5).ToList();
-            
+            foreach (Employee employee in Over5)
+            {
+                Console.WriteLine(employee.FirstName + "\n" + employee.LastName +"\n" + employee.ID + "\n");
+            }
+
 
             Console.ReadLine();
         }
@@ -124,9 +122,9 @@ List<Employee> JoeFor = new List<Employee>();
 
 
 
-//1. In the Main() method, create a list of at least 10 employees.Each employee should have a first and last name, as well as an Id.At least two employees should have the first name "Joe".
 
-//2. Using a foreach loop, create a new list of all employees with the first name "Joe".
+
+
 
 //3. Do the same thing again, but this time with a lambda expression.
 
