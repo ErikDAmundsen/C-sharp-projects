@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace blackjack
+
+namespace Casino.blackjack
 {
-    class TwentyOneGame : Game, IWalkAway
+   public  class TwentyOneGame : Game, IWalkAway
     {
         public TwentyOneDealer Dealer { get; set; }
         public override void Play ()// begin a game

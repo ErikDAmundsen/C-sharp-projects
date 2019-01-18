@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace blackjack
+namespace constantinople
 {
-    interface IWalkAway
+    class secondClass
     {
-         void WalkAway(Player player);
-
-
     }
 }
