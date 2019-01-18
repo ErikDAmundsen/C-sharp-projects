@@ -9,6 +9,8 @@ namespace blackjack
 {
     public class Dealer
     {
+       
+
         public string Name { get; set; }
         public Deck Deck { get; set; }
         public int Balance { get; set; }
@@ -20,7 +22,9 @@ namespace blackjack
             Console.WriteLine(card);
             using (StreamWriter file = new StreamWriter(@"C:\Users\The Tech Academy\Desktop\Log.txt", true))
             {
+                file.WriteLine(DateTime.Now);
                 file.WriteLine(card);
+                
             }
                 Deck.Cards.RemoveAt(0);
         }
