@@ -22,9 +22,10 @@ namespace StudentManagementSystem.Controllers
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
                 connection.Open();
-                SqlDataReader = command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();
 
-                while ()
+                while (reader.Read())
+                { }
 
 
 
