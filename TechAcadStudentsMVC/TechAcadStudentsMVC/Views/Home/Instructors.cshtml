@@ -1,4 +1,5 @@
-﻿
+﻿@using TechAcadStudentsMVC.Models
+@model List<Instructor>
 
 
 @{
@@ -7,9 +8,19 @@
 
 <h2>Instructors</h2>
 
-<h5>
+@{ 
+    foreach(Instructor instructor in Model)
+    {
+        <h4>@instructor.FirstName</h4>
+    }
+
+
+
+}
+
+@*<h5>
     Details for Instructor with ID: @ViewBag.id
-</h5>
+</h5>*@
 
 
 
