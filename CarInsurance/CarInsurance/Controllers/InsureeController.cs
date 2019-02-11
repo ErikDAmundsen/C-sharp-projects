@@ -135,8 +135,8 @@ namespace CarInsurance.Controllers
             }
            else
             {
-                string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=&quot;C: \USERS\THE TECH ACADEMY\DESKTOP\C# PROJECTS\C-SHARP-PROJECTS\CARINSURANCE\CARINSURANCE\APP_DATA\INSURANCE.MDF&quot;; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-                string queryString = @"INSERT INTO C:\USERS\THE TECH ACADEMY\DESKTOP\C# PROJECTS\C-SHARP-PROJECTS\CARINSURANCE\CARINSURANCE\APP_DATA\INSURANCE.MDF(FirstName,LastName,EmailAddress) VALUES
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C: \Users\The Tech Academy\Desktop\c# projects\C-sharp-projects\CarInsurance\CarInsurance\App_Data\Insurance.mdf';Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework";
+                string queryString = @"INSURANCE.MDF(FirstName,LastName,EmailAddress) VALUES
 (@FirstName, @LastName, @EmailAddress)";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

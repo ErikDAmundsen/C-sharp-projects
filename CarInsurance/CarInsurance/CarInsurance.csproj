@@ -177,6 +177,7 @@
       <LastGenOutput>InsuranceEntities.Context.cs</LastGenOutput>
       <DependentUpon>InsuranceEntities.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\InsuranceEntities.edmx.sql" />
     <Content Include="Models\InsuranceEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>InsuranceEntities.edmx</DependentUpon>
