@@ -1,0 +1,15 @@
+﻿@model List<CarInsurance2.Models.Insurees2>
+@foreach (var Insuree in Model)
+{
+
+    <th>
+        @Html.DisplayFor(X => Insuree.FirstName)
+    </th>
+}
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
