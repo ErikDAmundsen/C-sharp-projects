@@ -20,6 +20,10 @@ namespace Csharp_whiteboarding
             Reverse(entered);
             Console.ReadLine();
 
+
+            // reverse order of words when entered 3
+
+
             void Reverse(string str)
             {
                 int i;
@@ -54,7 +58,7 @@ namespace Csharp_whiteboarding
               
             }
 
-//check if a word is a palindrome
+//check if a word is a palindrome 2
            void ChkPal(string str2)
             {
                 bool flag = false;
@@ -78,7 +82,7 @@ namespace Csharp_whiteboarding
                 }
             }
 
-            //reverse a string
+            //reverse a string 1
 
 
             void ReverseString(string str)
