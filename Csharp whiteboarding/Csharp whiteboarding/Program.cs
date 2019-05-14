@@ -30,9 +30,26 @@ namespace Csharp_whiteboarding
 
                 while (Start >0)
                 {
+                    if (str[Start] == ' ')
+                    {
+                        i = Start + 1;
+                        while (i <= End)
+                        {
+                            reverseSentence.Append(str[i]);
+                            i++;
+                        }
+                        reverseSentence.Append(' ');
+                        End = Start - 1;
+                    }
+                    Start--;
+                                       
+                    }
+                for (i = 0; i<=End; i++)
+                {
+                    reverseSentence.Append(str[i]);
 
                 }
-
+                Console.WriteLine(reverseSentence.ToString());
 
               
             }
