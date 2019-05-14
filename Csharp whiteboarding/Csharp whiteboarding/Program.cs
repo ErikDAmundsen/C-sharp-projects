@@ -2,6 +2,7 @@
 
 
 using System;
+using System.Text;
 
 namespace Csharp_whiteboarding
 
@@ -10,14 +11,33 @@ namespace Csharp_whiteboarding
     {
         static void Main(string[] args)
         {
+        //Ans.: The user will input a sentence and we need to reverse the sequence of words in the sentence.
 
+       // input: Welcome to Csharp corner, output: corner Csharp to Welcome
 
             Console.WriteLine("Enter a word");
             string entered = Console.ReadLine();
-            ChkPal(entered);
+            Reverse(entered);
             Console.ReadLine();
 
+            void Reverse(string str)
+            {
+                int i;
+                StringBuilder reverseSentence = new StringBuilder();
 
+                int Start = str.Length - 1;
+                int End = str.Length - 1;
+
+                while (Start >0)
+                {
+
+                }
+
+
+              
+            }
+
+//check if a word is a palindrome
            void ChkPal(string str2)
             {
                 bool flag = false;
