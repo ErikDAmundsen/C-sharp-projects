@@ -16,9 +16,10 @@ namespace Csharp_whiteboarding
             // input: Welcome to Csharp corner, output: corner Csharp to Welcome
 
             Console.WriteLine("Enter a word");
-            string entered = Console.ReadLine();
-            Reverse(entered);
-            Console.ReadLine();
+            int entered = Int32.Parse(Console.ReadLine());
+            Foring( entered);
+            
+
 
 
             // reverse order of words when entered 3
@@ -128,3 +129,14 @@ namespace Csharp_whiteboarding
 //    }
 //}
 
+//Bonus 2
+void Foring(int Num)
+{
+    Console.WriteLine("\n" + "{0} {0} {0}", Num);
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine("{0}   {0}", Num);
+    }
+    Console.WriteLine("{0} {0} {0}", Num);
+}
+Console.ReadLine();
