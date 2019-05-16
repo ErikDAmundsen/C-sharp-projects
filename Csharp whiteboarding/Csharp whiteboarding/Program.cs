@@ -11,9 +11,9 @@ namespace Csharp_whiteboarding
     {
         static void Main(string[] args)
         {
-        //Ans.: The user will input a sentence and we need to reverse the sequence of words in the sentence.
+            //Ans.: The user will input a sentence and we need to reverse the sequence of words in the sentence.
 
-       // input: Welcome to Csharp corner, output: corner Csharp to Welcome
+            // input: Welcome to Csharp corner, output: corner Csharp to Welcome
 
             Console.WriteLine("Enter a word");
             string entered = Console.ReadLine();
@@ -32,7 +32,7 @@ namespace Csharp_whiteboarding
                 int Start = str.Length - 1;
                 int End = str.Length - 1;
 
-                while (Start >0)
+                while (Start > 0)
                 {
                     if (str[Start] == ' ')
                     {
@@ -46,20 +46,20 @@ namespace Csharp_whiteboarding
                         End = Start - 1;
                     }
                     Start--;
-                                       
-                    }
-                for (i = 0; i<=End; i++)
+
+                }
+                for (i = 0; i <= End; i++)
                 {
                     reverseSentence.Append(str[i]);
 
                 }
                 Console.WriteLine(reverseSentence.ToString());
 
-              
+
             }
 
-//check if a word is a palindrome 2
-           void ChkPal(string str2)
+            //check if a word is a palindrome 2
+            void ChkPal(string str2)
             {
                 bool flag = false;
 
@@ -94,11 +94,37 @@ namespace Csharp_whiteboarding
                     charArray[i] = str[j];
                     charArray[j] = str[i];
                 }
-                    string reversedstring = new string(charArray);
-                    Console.WriteLine(reversedstring);
-                
+                string reversedstring = new string(charArray);
+                Console.WriteLine(reversedstring);
+
             }
         }
     }
 }
+//Bonus method 1
+//using System;
+//public class Exercise1
+//{
+//    public static void Main()
+//    {
+//        Console.WriteLine("Enter first number");
+//        int A = Convert.ToInt32(Console.ReadLine());
+
+//        Console.WriteLine("Enter second number");
+//        int B = int.Parse(Console.ReadLine());
+
+//        Maths(A, B);
+
+//        void Maths(int IN1, int IN2)
+//        {
+//            Console.WriteLine(IN1 + IN2);
+//            Console.WriteLine(IN1 - IN2);
+//            Console.WriteLine(IN1 * IN2);
+//            Console.WriteLine(IN1 / IN2);
+
+
+//        }
+//        Console.ReadLine();
+//    }
+//}
 
