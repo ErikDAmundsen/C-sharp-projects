@@ -17,11 +17,44 @@ namespace Csharp_whiteboarding
 
             Console.WriteLine("Enter a word");
             int entered = Int32.Parse(Console.ReadLine());
-            Foring( entered);
+
+            //IsPalindrome(entered);
+            Console.WriteLine(IsPalindrome(entered));
+            Console.ReadLine();
+             bool IsPalindrome(int x)
+             {
+                if (x <= 0)
+                {
+                    return false;
+                }
+                string NUMS = x.ToString();
+                
+                int end = NUMS.Length - 1;
+                for (int i = 0, J = end; i < J; i++, J--)
+                {
+                    if (NUMS[i] != NUMS[J])
+                    {
+                        return false;
+
+                    }
+                 }
+                    return true;
+               
+           
+             }
+
+
+            // remove a character
+            string Pick(int rem)
+            { string A = ("ERIKDAMU");
+                string Z = A.Remove(rem,1);
+                return Z;
+            }
+            Console.ReadLine();
+
+         
             
-
-
-
+            
             // reverse order of words when entered 3
 
 
@@ -98,45 +131,47 @@ namespace Csharp_whiteboarding
                 string reversedstring = new string(charArray);
                 Console.WriteLine(reversedstring);
 
-            }
+
+    //Bonus method 1
+    //using System;
+    //public class Exercise1
+    //{
+    //    public static void Main()
+    //    {
+    //        Console.WriteLine("Enter first number");
+    //        int A = Convert.ToInt32(Console.ReadLine());
+
+    //        Console.WriteLine("Enter second number");
+    //        int B = int.Parse(Console.ReadLine());
+
+    //        Maths(A, B);
+
+    //        void Maths(int IN1, int IN2)
+    //        {
+    //            Console.WriteLine(IN1 + IN2);
+    //            Console.WriteLine(IN1 - IN2);
+    //            Console.WriteLine(IN1 * IN2);
+    //            Console.WriteLine(IN1 / IN2);
+
+
+    //        }
+    //        Console.ReadLine();
+    //    }
+    //}
+
+    //Bonus 2
+    void Foring(int Num)
+    {
+        Console.WriteLine("\n" + "{0} {0} {0}", Num);
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("{0}   {0}", Num);
+        }
+        Console.WriteLine("{0} {0} {0}", Num);
+    }
+    Console.ReadLine();
+        }
+
         }
     }
 }
-//Bonus method 1
-//using System;
-//public class Exercise1
-//{
-//    public static void Main()
-//    {
-//        Console.WriteLine("Enter first number");
-//        int A = Convert.ToInt32(Console.ReadLine());
-
-//        Console.WriteLine("Enter second number");
-//        int B = int.Parse(Console.ReadLine());
-
-//        Maths(A, B);
-
-//        void Maths(int IN1, int IN2)
-//        {
-//            Console.WriteLine(IN1 + IN2);
-//            Console.WriteLine(IN1 - IN2);
-//            Console.WriteLine(IN1 * IN2);
-//            Console.WriteLine(IN1 / IN2);
-
-
-//        }
-//        Console.ReadLine();
-//    }
-//}
-
-//Bonus 2
-void Foring(int Num)
-{
-    Console.WriteLine("\n" + "{0} {0} {0}", Num);
-    for (int i = 0; i < 5; i++)
-    {
-        Console.WriteLine("{0}   {0}", Num);
-    }
-    Console.WriteLine("{0} {0} {0}", Num);
-}
-Console.ReadLine();
