@@ -13,18 +13,14 @@ namespace techAcad_whiteboard
 
             //            Given an array of integers, write a method to total the odd numbers.
             Console.WriteLine("1. Given an array of integers, write a method to total the odd numbers.");
-
-
-         
-               
+  
             int [] IntArr = new int[5] ;
              for(int i = 0; i < 5; i++)
             {
                 Console.WriteLine("Please enter a positive whole number and press enter");
                 IntArr[i] = Convert.ToInt32(Console.ReadLine());
             }
-
-
+       
             Console.Write("The numbers you added were ");
                 IntArr.ToList().ForEach(Console.Write);
 
