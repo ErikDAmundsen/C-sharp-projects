@@ -16,12 +16,35 @@ namespace Csharp_whiteboarding
             // input: Welcome to Csharp corner, output: corner Csharp to Welcome
 
             Console.WriteLine("Enter a word");
-            int entered = Int32.Parse(Console.ReadLine());
-
-            //IsPalindrome(entered);
-            Console.WriteLine(IsPalindrome(entered));
+            string entered = (Console.ReadLine());
+            AllPos(entered);
             Console.ReadLine();
-             bool IsPalindrome(int x)
+
+            void AllPos(string Ent)
+            {
+               
+               
+               for (int i = 0; i< Ent.Length; i++)
+                {
+                    StringBuilder Answer = new StringBuilder(Ent.Length - i);
+                        for(int a = i; a< Ent.Length;a++)
+                    {
+                        Answer.Append(Ent[a]);
+                        Console.WriteLine(Answer + " ");
+                    }
+                }
+                
+                
+            }
+            Console.ReadLine();
+
+
+            //all possible configurations of a string
+
+
+
+            //if nnumber is palindrome
+            bool IsPalindrome(int x)
              {
                 if (x <= 0)
                 {
