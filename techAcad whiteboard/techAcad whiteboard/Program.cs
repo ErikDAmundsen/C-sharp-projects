@@ -54,8 +54,23 @@ List<int> oddInts = new List<int> { };
 
             //Given an array of integers, write a method to sum the elements in the array, knowing that some of the elements may be very large integers.
             Console.WriteLine("2. Given an array of integers, write a method to sum the elements in the array, knowing that some of the elements may be very large integers. ");
+            NumEnt();
+int[] EntInt = new int[5];
+
+            void NumEnt(){
+               for(int i=0;i<5;i++){
+                    
+                    Console.WriteLine("Please enter a positive whole number");
+                    EntInt[i] = Int32.Parse(Console.ReadLine());
+
+            }
+                var longs = EntInt.Select(items => (long)items).ToArray();
+                SumAr(longs);
+           void SumAr( [] longss)
+                {
 
 
+                }
 
             //Given a string, reverse it.
             Console.WriteLine("3. Given a string, reverse it");
