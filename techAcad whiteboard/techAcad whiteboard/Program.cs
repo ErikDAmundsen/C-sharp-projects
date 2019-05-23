@@ -81,23 +81,23 @@ namespace techAcad_whiteboard
 //                Console.ReadLine();
 
             //Given a string, reverse it.
-            Console.WriteLine("3. Given a string, reverse it");
-            Console.WriteLine("Please enter a word");
-            string INTAKE = Console.ReadLine();
+            //Console.WriteLine("3. Given a string, reverse it");
+            //Console.WriteLine("Please enter a word");
+            //string INTAKE = Console.ReadLine();
 
-             Reverse(INTAKE);
+            // Reverse(INTAKE);
 
-            void Reverse(string INTAKEE)
-            {
-                var LETS = INTAKEE.ToCharArray();
-                StringBuilder REVED = new StringBuilder();
-                for (int i = LETS.Length- 1; i>=0;i--)
-                {
-                    REVED.Append(LETS[i]);
-                }
-                Console.WriteLine("The reverse of what you entered is " + REVED);
-            }
-            Console.ReadLine();
+            //void Reverse(string INTAKEE)
+            //{
+            //    var LETS = INTAKEE.ToCharArray();
+            //    StringBuilder REVED = new StringBuilder();
+            //    for (int i = LETS.Length- 1; i>=0;i--)
+            //    {
+            //        REVED.Append(LETS[i]);
+            //    }
+            //    Console.WriteLine("The reverse of what you entered is " + REVED);
+            //}
+            //Console.ReadLine();
 
 
             //Given a string, remove any repeated letters.
