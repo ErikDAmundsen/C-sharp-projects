@@ -43,7 +43,7 @@ namespace Csharp_whiteboarding
 
 
 
-            //if nnumber is palindrome
+            //if number is palindrome
             bool IsPalindrome(int x)
              {
                 if (x <= 0)
