@@ -142,7 +142,12 @@ namespace techAcad_whiteboard
             void FB()
             {
                 for(int a=0;a<101;a++)
-                { if ( (a % 3) == 0)
+                {
+                    if ((a % 5) == 0 || (a % 3) == 0)
+                    {
+                        Console.WriteLine("FizzBuzz");
+                    }
+                    if ( (a % 3) == 0)
                     { Console.WriteLine("Fizz");
                         continue;
                     }
