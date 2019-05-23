@@ -101,8 +101,29 @@ namespace techAcad_whiteboard
 
 
             //Given a string, remove any repeated letters.
-            Console.WriteLine("4. Given a string, reverse it. ");
+            Console.WriteLine("4. Given a string, remove any repeated letters. ");
+            Console.WriteLine("Please enter a word");
+            string INPUT = Console.ReadLine();
 
+            check(INPUT);
+            void check(string INPUTs)
+                {
+               List<char> INPARR = INPUTs.ToList();
+                List<char> SING = new List<char>();
+
+                for ( int i =0;i< INPUTs.Length; i++)
+                {
+                    if (SING.Contains(INPARR[i]))
+                        { continue; }
+                    SING.Add(INPARR[i]);
+                }
+                    StringBuilder RES = new StringBuilder();
+                foreach (char character in SING) { RES.Append(character); }
+            
+                Console.WriteLine(" Your input with duplicates removed is " +RES);
+
+            }
+            Console.ReadLine();
 
 
 
