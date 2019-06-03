@@ -2,6 +2,7 @@
 
 
 using System;
+using System.Linq;
 using System.Text;
 
 namespace Csharp_whiteboarding
@@ -196,5 +197,18 @@ namespace Csharp_whiteboarding
         }
 
         }
-    }
+  
+      void removeduplicate(string str)
+    {
+        string result = string.Empty;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (!result.Contains(str[i]))
+            {
+                result += str[i];
+            }
+        }
+        Console.WriteLine(result);
+    }  }
 }
