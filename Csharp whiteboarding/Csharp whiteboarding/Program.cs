@@ -209,6 +209,8 @@ namespace Csharp_whiteboarding
                 result += str[i];
             }
         }
+
         Console.WriteLine(result);
     }  }
 }
+
