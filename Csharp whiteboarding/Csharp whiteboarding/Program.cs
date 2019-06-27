@@ -15,6 +15,29 @@ namespace Csharp_whiteboarding
             //Ans.: The user will input a sentence and we need to reverse the sequence of words in the sentence.
 
             // input: Welcome to Csharp corner, output: corner Csharp to Welcome
+            Console.ReadLine();
+            Reverse(" This is the last word of the sentence");
+            Console.ReadLine();
+
+            for (int i = 0; i < 101; i++)
+            { if (i % 3 == 0 && i % 5 == 0)
+                { Console.WriteLine("FizzBuzz");
+                    continue;
+                }
+                if (i % 3 == 0)
+                { Console.WriteLine("Fizz");
+                    continue;
+                }
+                if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                    continue;
+                }
+
+                //else { Console.WriteLine(i); }
+            }
+            Console.ReadLine();
+
 
             Console.WriteLine("Enter a word");
             string entered = (Console.ReadLine());
