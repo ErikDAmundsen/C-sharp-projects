@@ -16,8 +16,13 @@ namespace Csharp_whiteboarding
 
             // input: Welcome to Csharp corner, output: corner Csharp to Welcome
             Console.ReadLine();
-            Reverse(" This is the last word of the sentence");
+            Rev("This is the last word of the sentence");
             Console.ReadLine();
+
+
+            void Rev(string IN)
+            { }
+
 
             for (int i = 0; i < 101; i++)
             { if (i % 3 == 0 && i % 5 == 0)
@@ -105,22 +110,22 @@ namespace Csharp_whiteboarding
             // reverse order of words when entered 3
 
 
-            void Reverse(string str)
+            void Reverse(string IN)
             {
                 int i;
                 StringBuilder reverseSentence = new StringBuilder();
 
-                int Start = str.Length - 1;
-                int End = str.Length - 1;
+                int Start = IN.Length - 1;
+                int End = IN.Length - 1;
 
                 while (Start > 0)
                 {
-                    if (str[Start] == ' ')
+                    if (IN[Start] == ' ')
                     {
                         i = Start + 1;
                         while (i <= End)
                         {
-                            reverseSentence.Append(str[i]);
+                            reverseSentence.Append(IN[i]);
                             i++;
                         }
                         reverseSentence.Append(' ');
@@ -131,7 +136,7 @@ namespace Csharp_whiteboarding
                 }
                 for (i = 0; i <= End; i++)
                 {
-                    reverseSentence.Append(str[i]);
+                    reverseSentence.Append(IN[i]);
 
                 }
                 Console.WriteLine(reverseSentence.ToString());
