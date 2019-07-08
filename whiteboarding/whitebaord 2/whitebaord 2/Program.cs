@@ -70,17 +70,33 @@ namespace whitebaord_2
             //print a times table
 
 
-            Console.WriteLine("Enter a whole number");
-            int IN = Int32.Parse(Console.ReadLine());
+         //   Console.WriteLine("Enter a whole number");
+         //   int IN = Int32.Parse(Console.ReadLine());
 
-            TimesT(IN);
+         //   TimesT(IN);
 
-            void TimesT(int INN) { 
-            for (int i = 1; i <= 10; i++)
-            {
-                    Console.WriteLine(i * INN);
-            }
-         }
+         //   void TimesT(int INN) { 
+         //   for (int i = 1; i <= 10; i++)
+         //   {
+         //           Console.WriteLine(i * INN);
+         //   }
+         //}
+
+            //count the number of times a char occurs in a string
+          
+                //SortedDictionary<char, int> characterCount = new SortedDictionary<char, int>();
+                //foreach (var character in stringToCount)
+                //{ if (!characterCount.ContainsKey(character))
+                //    {
+                //        characterCount.Add(character, 1);
+                //    }
+                //else
+                //    {
+                //        characterCount[character]++;
+                //    }
+
+                //}
+            
             Console.ReadLine();
         }
         }
