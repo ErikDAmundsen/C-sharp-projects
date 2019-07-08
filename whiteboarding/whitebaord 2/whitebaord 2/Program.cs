@@ -98,37 +98,60 @@ namespace whitebaord_2
 
             //}
 
-           // // are two string anagrams?
+            // // are two string anagrams?
+
+            //bool areAnagram(ArrayList str1,
+            //                       ArrayList str2)
+            // {
+            //     // Get lenghts of both strings 
+            //     int n1 = str1.Count;
+            //     int n2 = str2.Count;
+
+            //     // If length of both strings is not 
+            //     // same, then they cannot be anagram 
+            //     if (n1 != n2)
+            //     {
+            //         return false;
+            //     }
+
+            //     // Sort both strings 
+            //     str1.Sort();
+            //     str2.Sort();
+
+            //     // Compare sorted strings 
+            //     for (int i = 0; i < n1; i++)
+            //     {
+            //         if (str1[i] != str2[i])
+            //         {
+            //             return false;
+            //         }
+            //     }
+
+            //     return true;
+            // }
+
+            ////divide without using math operatoor
+
             
-           //bool areAnagram(ArrayList str1,
-           //                       ArrayList str2)
-           // {
-           //     // Get lenghts of both strings 
-           //     int n1 = str1.Count;
-           //     int n2 = str2.Count;
+            //int Div()
+            //{
+            //    int a = 40;
+            //    int b = 5;
+            //    int count = b;
+            //    while (b < a)
+            //    {
+            //        b += b;
+            //        count++;
 
-           //     // If length of both strings is not 
-           //     // same, then they cannot be anagram 
-           //     if (n1 != n2)
-           //     {
-           //         return false;
-           //     }
 
-           //     // Sort both strings 
-           //     str1.Sort();
-           //     str2.Sort();
+            //    }
+            //    return count;
+            //}
+            //Console.WriteLine(Div());
 
-           //     // Compare sorted strings 
-           //     for (int i = 0; i < n1; i++)
-           //     {
-           //         if (str1[i] != str2[i])
-           //         {
-           //             return false;
-           //         }
-           //     }
-
-           //     return true;
-           // }
+               
+            
+           
 
 
 
