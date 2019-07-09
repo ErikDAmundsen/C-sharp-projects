@@ -148,7 +148,30 @@ namespace whitebaord_2
             //    return count;
             //}
             //Console.WriteLine(Div());
+            //character count
+             void Countcharacter(string str)
+            {
+                Dictionary<char, int> characterCount = new Dictionary<char, int>();
+                foreach (var character in str)
+                {
+                    if (character != ' ')
+                    {
+                        if (!characterCount.ContainsKey(character))
+                        {
+                            characterCount.Add(character, 1);
+                        }
+                        else
+                        {
+                            characterCount[character]++;
+                        }
 
+                    } }
+                foreach (var character in characterCount)
+                        {
+                            Console.WriteLine("{0} has {1} instance",character.Key, character.Value);
+                        }
+                
+            }
                
             
            
