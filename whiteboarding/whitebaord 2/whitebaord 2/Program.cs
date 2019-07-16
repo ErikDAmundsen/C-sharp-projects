@@ -149,10 +149,10 @@ namespace whitebaord_2
             //}
             //Console.WriteLine(Div());
             //character count
-             void Countcharacter(string str)
+             char Countcharacter(string str)
             {
                 Dictionary<char, int> characterCount = new Dictionary<char, int>();
-                foreach (var character in str)
+                foreach (char character in str)
                 {
                     if (character != ' ')
                     {
@@ -164,14 +164,18 @@ namespace whitebaord_2
                         {
                             characterCount[character]++;
                         }
+                        
+                } }
 
-                    } }
-                foreach (var character in characterCount)
-                        {
-                            Console.WriteLine("{0} has {1} instance",character.Key, character.Value);
-                        }
+                
+                var T = characterCount.FirstOrDefault(m => m.Value == characterCount.Values.Max()).Key;
+
+                return T;
+               
                 
             }
+            string st = "A B CC D";
+            Console.WriteLine(Countcharacter(st));
                
             
            
