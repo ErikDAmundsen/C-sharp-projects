@@ -185,7 +185,13 @@ namespace whitebaord_2
             int y = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Check if one is negative and one is positive:");
             Console.WriteLine((x < 0 && y > 0) || (x > 0 && y < 0));
-
+            Console.WriteLine(SumTriple(2, 2));
+            Console.WriteLine(SumTriple(12, 10));
+            Console.WriteLine(SumTriple(-5, 2));
+        }
+        public static int SumTriple(int a, int b)
+        {
+            return a == b ? (a + b) * 3 : a + b;
 
             Console.ReadLine();
         }
