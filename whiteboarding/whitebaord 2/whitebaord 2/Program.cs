@@ -132,7 +132,7 @@ namespace whitebaord_2
 
             ////divide without using math operatoor
 
-            
+
             //int Div()
             //{
             //    int a = 40;
@@ -149,59 +149,81 @@ namespace whitebaord_2
             //}
             //Console.WriteLine(Div());
             //character count
-        //     char Countcharacter(string str)
-        //    {
-        //        Dictionary<char, int> characterCount = new Dictionary<char, int>();
-        //        foreach (char character in str)
-        //        {
-        //            if (character != ' ')
-        //            {
-        //                if (!characterCount.ContainsKey(character))
-        //                {
-        //                    characterCount.Add(character, 1);
-        //                }
-        //                else
-        //                {
-        //                    characterCount[character]++;
-        //                }
-                        
-        //        } }
+            //     char Countcharacter(string str)
+            //    {
+            //        Dictionary<char, int> characterCount = new Dictionary<char, int>();
+            //        foreach (char character in str)
+            //        {
+            //            if (character != ' ')
+            //            {
+            //                if (!characterCount.ContainsKey(character))
+            //                {
+            //                    characterCount.Add(character, 1);
+            //                }
+            //                else
+            //                {
+            //                    characterCount[character]++;
+            //                }
 
-                
-        //        var T = characterCount.FirstOrDefault(m => m.Value == characterCount.Values.Max()).Key;
-
-        //        return T;
-               
-                
-        //    }
-        //    string st = "A B CC D";
-        //    Console.WriteLine(Countcharacter(st));
+            //        } }
 
 
+            //        var T = characterCount.FirstOrDefault(m => m.Value == characterCount.Values.Max()).Key;
 
-        //    Console.WriteLine("\nInput first integer:");
-        //    int x = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Input second integer:");
-        //    int y = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Check if one is negative and one is positive:");
-        //    Console.WriteLine((x < 0 && y > 0) || (x > 0 && y < 0));
-        //    Console.WriteLine(SumTriple(2, 2));
-        //    Console.WriteLine(SumTriple(12, 10));
-        //    Console.WriteLine(SumTriple(-5, 2));
-        //}
-        //public static int SumTriple(int a, int b)
-        //{
-        //    return a == b ? (a + b) * 3 : a + b;
+            //        return T;
 
-            bool CHECK(int a, int b)
+
+            //    }
+            //    string st = "A B CC D";
+            //    Console.WriteLine(Countcharacter(st));
+
+
+
+            //    Console.WriteLine("\nInput first integer:");
+            //    int x = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine("Input second integer:");
+            //    int y = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine("Check if one is negative and one is positive:");
+            //    Console.WriteLine((x < 0 && y > 0) || (x > 0 && y < 0));
+            //    Console.WriteLine(SumTriple(2, 2));
+            //    Console.WriteLine(SumTriple(12, 10));
+            //    Console.WriteLine(SumTriple(-5, 2));
+            //}
+            //public static int SumTriple(int a, int b)
+            //{
+            //    return a == b ? (a + b) * 3 : a + b;
+
+            //bool CHECK(int a, int b)
+            //{
+            //    if(a==20||b==20||(a+b==20))
+            //    { return true; }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+
+            string G = "A small cat was socoolit";
+            Console.WriteLine(Longest(G));
+
+            string Longest(string I)
             {
-                if(a==20||b==20||(a+b==20))
-                { return true; }
-                else
+                 int A = 0;
+                    string MAX = string.Empty;
+                string[] words = I.Split(' ');
+                foreach (string word in words)
                 {
-                    return false;
+                 
+                    if (word.Length > A)
+                    {
+                        A = word.Length;
+                        MAX = word;
+                    }
                 }
+                return MAX;
             }
+
+           
 
             Console.ReadLine();
         }
