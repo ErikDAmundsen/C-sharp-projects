@@ -203,27 +203,43 @@ namespace whitebaord_2
             //    }
             //}
 
-            string G = "A small cat was socoolit";
-            Console.WriteLine(Longest(G));
+            //string G = "A small cat was socoolit";
+            //Console.WriteLine(Longest(G));
 
-            string Longest(string I)
+            //string Longest(string I)
+            //{
+            //     int A = 0;
+            //        string MAX = string.Empty;
+            //    string[] words = I.Split(' ');
+            //    foreach (string word in words)
+            //    {
+
+            //        if (word.Length > A)
+            //        {
+            //            A = word.Length;
+            //            MAX = word;
+            //        }
+            //    }
+            //    return MAX;
+            //}
+            //void C()
+            //{
+            //    for(int i = 1; i<100; i += 2)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
+
+            //C();
+            Console.Write("Input  a number(integer): ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            while (n != 0)
             {
-                 int A = 0;
-                    string MAX = string.Empty;
-                string[] words = I.Split(' ');
-                foreach (string word in words)
-                {
-                 
-                    if (word.Length > A)
-                    {
-                        A = word.Length;
-                        MAX = word;
-                    }
-                }
-                return MAX;
+                sum += n % 10;
+                n /= 10;
             }
-
-           
+            Console.WriteLine("Sum of the digits of the said integer: " + sum);
 
             Console.ReadLine();
         }
