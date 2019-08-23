@@ -317,25 +317,35 @@ namespace whitebaord_2
             //    return final;
             //}
 
-            int valyou = 100; ;
-            recur(valyou);
-            Console.ReadLine();
-          
+            //int valyou = 100; ;
+            //recur(valyou);
+            //Console.ReadLine();
+            string st = "I will get a job";
+           Console.WriteLine(count(st));
 
-        }
-
-        private static void recur(int valyou)
-        {
-           if (valyou ==1)
-            { Console.WriteLine(valyou + "The end"); }
-            else
-            {
-                Console.WriteLine(valyou);
-                valyou -= 1;
-                recur(valyou);
-
+          int count(string sentence)
+                {
+                string[] words = sentence.Split(' ');
+                int num = words.Count();
+                return num;
             }
+            
+            Console.ReadLine();
+
         }
+
+        //private static void recur(int valyou)
+        //{
+        //   if (valyou ==1)
+        //    { Console.WriteLine(valyou + "The end"); }
+        //    else
+        //    {
+        //        Console.WriteLine(valyou);
+        //        valyou -= 1;
+        //        recur(valyou);
+
+//    }
+//}
     }
 }
     
