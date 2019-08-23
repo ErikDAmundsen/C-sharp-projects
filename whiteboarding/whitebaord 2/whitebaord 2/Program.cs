@@ -320,32 +320,64 @@ namespace whitebaord_2
             //int valyou = 100; ;
             //recur(valyou);
             //Console.ReadLine();
-            string st = "I will get a job";
-           Console.WriteLine(count(st));
+            //string st = "I will get a job";
+            //   Console.WriteLine(count(st));
 
-          int count(string sentence)
+            //  int count(string sentence)
+            //        {
+            //        string[] words = sentence.Split(' ');
+            //        int num = words.Count();
+            //        return num;
+            //    }
+
+            //           //    Console.ReadLine();
+
+            //           string word = "Rise to vote sir";
+
+            //           Rev(word);
+
+            //           string Rev(string inp)
+            //           {
+
+            //               string owt = "";
+            //               for ( int i = inp.Length - 1; i>= 0; i --)
+            //               {
+
+            //                   owt += inp[i];
+            //               }
+
+            //                   Console.WriteLine(owt);
+
+
+            //               return owt;
+            //           }
+            //Console.ReadLine();
+
+            int[] Lists = new int[] { 2, 3, 4, 5, 6, 7, 8 };
+            int target = 7;
+            Console.WriteLine(check(Lists));
+
+            string check(int[] List)
+            {
+                string answer = "No two variable equals the target";
+                for (int i = 0; i < List.Length; i++)
+
                 {
-                string[] words = sentence.Split(' ');
-                int num = words.Count();
-                return num;
-            }
-            
-            Console.ReadLine();
+                    for (int j = 0; j < List.Length; j++)
+                    {
+                        if (List[i] + List[j] == target )
+                        {
+                            answer = (List[j] + " plus " + List[i] + " equals " + target);
+                        }
 
+                    }
+                }
+                return answer;
+            }
+            Console.ReadLine();
         }
 
-        //private static void recur(int valyou)
-        //{
-        //   if (valyou ==1)
-        //    { Console.WriteLine(valyou + "The end"); }
-        //    else
-        //    {
-        //        Console.WriteLine(valyou);
-        //        valyou -= 1;
-        //        recur(valyou);
 
-//    }
-//}
     }
 }
     
