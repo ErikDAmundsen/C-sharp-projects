@@ -285,36 +285,55 @@ namespace whitebaord_2
             //}
             //Console.WriteLine("Sum of the digits of the said integer: " + sum);
 
-            string dup(string inp)
-            {
-                string final = string.Empty;
-                foreach(Char character in inp)
-                {
-                    final = final + character;
-                    final = final + character;
+            //string dup(string inp)
+            //{
+            //    string final = string.Empty;
+            //    foreach(Char character in inp)
+            //    {
+            //        final = final + character;
+            //        final = final + character;
 
-                }
-                return final;
-            }
-            string st = "Eeriikk";
-            Console.WriteLine(remoDup(st));
+            //    }
+            //    return final;
+            //}
+            //string st = "Eeriikk";
+            //Console.WriteLine(remoDup(st));
+            //Console.ReadLine();
+
+            //string remoDup(string inp)
+            //{
+            //    string final = string.Empty;
+            //    foreach(char character in inp)
+            //    {
+            //        if (final.Contains(character))
+            //            {
+            //            continue;
+            //             }
+            //        else
+            //        {
+            //            final += character;
+            //        }
+            //    }
+            //    return final;
+            //}
+
+            int valyou = 100; ;
+            recur(valyou);
             Console.ReadLine();
+          
 
-            string remoDup(string inp)
+        }
+
+        private static void recur(int valyou)
+        {
+           if (valyou ==1)
+            { Console.WriteLine(valyou + "The end"); }
+            else
             {
-                string final = string.Empty;
-                foreach(char character in inp)
-                {
-                    if (final.Contains(character))
-                        {
-                        continue;
-                         }
-                    else
-                    {
-                        final += character;
-                    }
-                }
-                return final;
+                Console.WriteLine(valyou);
+                valyou -= 1;
+                recur(valyou);
+
             }
         }
     }
