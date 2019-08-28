@@ -43,7 +43,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
             };
             List<string> dict = new List<string>
             {
-                "FAORPM",//not a real word, checking to see if logic works
+                "FAUX",//not a real word, checking to see if logic works
                 "FOR",
                 "FORM",
                 "WEST"
@@ -51,6 +51,8 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
 
             };
+
+      
 
             string check = "";
 
@@ -62,10 +64,21 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 for (int row = 0; row < 3; row++)
                 {
                     check = "";
-                    bool[,] visited = new bool[3, 3];
+                    bool[,] visited = new bool[4, 4];
 
 
                     traverseAdjacent(dict, check, row, col, visited);
+
+//reset visited to false
+                    for (int column = 0;column<3;column++)
+                    {
+                        for (int rows = 0; rows < 3; rows++)
+                        {
+                            visited[column, rows] = false;
+                        }
+                    }
+                 
+                 
 
 
                 }
@@ -97,20 +110,36 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 if (checker.Length >= 3 && dictionary.Contains(checker))
                 {
                     Console.WriteLine("Congratulations you found a word! {0}", checker);
+                    
                 }
 
-                traverseAdjacent(dictionary, checker, row-1, col -1,visited);
-                traverseAdjacent(dictionary, checker, row, col-1, visited);
-                traverseAdjacent(dictionary, checker, row-1, col +1, visited);
-                traverseAdjacent(dictionary, checker, row -1, col, visited);
-                traverseAdjacent(dictionary, checker, row+1, col , visited);
-                traverseAdjacent(dictionary, checker, row - 1, col+1, visited);
-                traverseAdjacent(dictionary, checker, row, col + 1, visited);
-                traverseAdjacent(dictionary, checker, row+1, col+1, visited);
+                //for (int vert = -1; vert <= 1; vert++)
+                //    for (int horiz = -1; horiz <= 1; horiz++)
+                //    {
+                //        if (row + vert >= 0 && row + vert < 3 &&
+                //           !(vert == 0 && horiz == 0) &&
+                //           board[row + vert, col + horiz] != "~")
+                //        {
+                //            board[row, col] = "~";
+                //            traverseAdjacent(dictionary, checker, row + vert, col + horiz, visited);
+                //            //board[row, col] = originalValue;
+                //        }
+                //        else { continue; }
+                //    }
 
-               //else if(col<3 && (visited[row, col] == true))
-               // { traverseAdjacent(dictionary, checker, row, col + 1, visited); }
-               // else if()
+
+                traverseAdjacent(dictionary, checker, row - 1, col - 1, visited);
+                traverseAdjacent(dictionary, checker, row, col - 1, visited);
+                traverseAdjacent(dictionary, checker, row + 1, col - 1, visited);
+                traverseAdjacent(dictionary, checker, row - 1, col, visited);
+                traverseAdjacent(dictionary, checker, row + 1, col, visited);
+                traverseAdjacent(dictionary, checker, row - 1, col + 1, visited);
+                traverseAdjacent(dictionary, checker, row, col + 1, visited);
+                traverseAdjacent(dictionary, checker, row + 1, col + 1, visited);
+
+                //else if(col<3 && (visited[row, col] == true))
+                // { traverseAdjacent(dictionary, checker, row, col + 1, visited); }
+                // else if()
 
 
                 //for(int loop1 = 0; loop1 < 3; loop1++)
