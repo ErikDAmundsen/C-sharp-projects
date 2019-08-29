@@ -38,47 +38,32 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 {"U","L","S","B" },
                 {"X", "T", "D","I" }
 
-
-
             };
             List<string> dict = new List<string>
             {
-                "FAUX",//not a real word, checking to see if logic works
+                "FAUX",               
                 "FOR",
-                "FORM",
+                "FORM",                
+                "WEB",
                 "WEST"
-
-
 
             };
 
-      
 
             string check = "";
+            List<String> result = new List<string>();
 
-
-            for (int col = 0; col < 3; col++)
+            for (int Col = 0; Col <= 3; Col++)
             {
 
 
-                for (int row = 0; row < 3; row++)
+                for (int Row = 0; Row <= 3; Row++)
                 {
                     check = "";
                     bool[,] visited = new bool[4, 4];
 
 
-                    traverseAdjacent(dict, check, row, col, visited);
-
-//reset visited to false
-                    for (int column = 0;column<3;column++)
-                    {
-                        for (int rows = 0; rows < 3; rows++)
-                        {
-                            visited[column, rows] = false;
-                        }
-                    }
-                 
-                 
+                    traverseAdjacent(dict, check, Row, Col, visited);
 
 
                 }
@@ -88,111 +73,47 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
 
 
-            void traverseAdjacent(List<string> dictionary, string checker, int row, int col, bool[,] visited)
+            void traverseAdjacent(List<string> dictionary, string checker, int Row, int Col, bool[,] visited)
             {
                 // finding adjacent cells and recurse
 
 
-
-
-                if (row < 0 || row > 3 || col < 0 || col > 3)
+                if (Row < 0 || Row > 3 || Col < 0 || Col > 3)
                 {
                     return;
 
                 }
-                if (visited[row, col] == true)
+                if (visited[Row, Col] == true)
                 {
                     return;
                 }
-                checker += board[row, col];
-                visited[row, col] = true;
+                checker += board[Row, Col];
+                visited[Row, Col] = true;
 
                 if (checker.Length >= 3 && dictionary.Contains(checker))
                 {
+                    result.Add(checker);
                     Console.WriteLine("Congratulations you found a word! {0}", checker);
+                    
                     
                 }
 
-                //for (int vert = -1; vert <= 1; vert++)
-                //    for (int horiz = -1; horiz <= 1; horiz++)
-                //    {
-                //        if (row + vert >= 0 && row + vert < 3 &&
-                //           !(vert == 0 && horiz == 0) &&
-                //           board[row + vert, col + horiz] != "~")
-                //        {
-                //            board[row, col] = "~";
-                //            traverseAdjacent(dictionary, checker, row + vert, col + horiz, visited);
-                //            //board[row, col] = originalValue;
-                //        }
-                //        else { continue; }
-                //    }
 
+                for (int vert = -1; vert <= 1; vert++)
+                {
+                    for (int horiz = -1; horiz <= 1; horiz++)
+                    {
 
-                traverseAdjacent(dictionary, checker, row - 1, col - 1, visited);
-                traverseAdjacent(dictionary, checker, row, col - 1, visited);
-                traverseAdjacent(dictionary, checker, row + 1, col - 1, visited);
-                traverseAdjacent(dictionary, checker, row - 1, col, visited);
-                traverseAdjacent(dictionary, checker, row + 1, col, visited);
-                traverseAdjacent(dictionary, checker, row - 1, col + 1, visited);
-                traverseAdjacent(dictionary, checker, row, col + 1, visited);
-                traverseAdjacent(dictionary, checker, row + 1, col + 1, visited);
+                        traverseAdjacent(dictionary, checker, Row + vert, Col + horiz, visited);
 
-                //else if(col<3 && (visited[row, col] == true))
-                // { traverseAdjacent(dictionary, checker, row, col + 1, visited); }
-                // else if()
-
-
-                //for(int loop1 = 0; loop1 < 3; loop1++)
-                //{
-                //    for (int loop2 = 0; loop1 < 3; loop1++)
-                //    {
-
-
-                //    }
-
-                //        traverseAdjacent(dictionary, checker, row, col + 1, visited);
-                //}
-
-
-
-
-                //int loop1 = 1;
-
-                //switch (loop1)
-                //{
-                //    case 1:
-                //        loop++;
-                //        traverseAdjacent(dictionary, checker, row, col + 1, visited);
-                //        break;
-                //    case 2:
-                //        loop++;
-                //        traverseAdjacent(dictionary, checker, row, col, visited);
-                //        break;
-                //    case 3:
-                //        traverseAdjacent(dictionary, checker, row, col - 1, visited);
-                //        break;
-                //    case 4:
-                //        traverseAdjacent(dictionary, checker, row - 1, col, visited);
-                //        break;
-                //    case 5:
-                //        traverseAdjacent(dictionary, checker, row, col + 1, visited);
-                //        break;
-                //    case 6:
-                //        traverseAdjacent(dictionary, checker, row + 1, col, visited);
-                //        break;
-                //    case 7:
-                //        traverseAdjacent(dictionary, checker, row, col + 1, visited);
-                //        break;
-                //    case 8:
-                //        traverseAdjacent(dictionary, checker, row, col, visited);
-                //        break;
+                    }
+                }
+                visited[Row, Col] = false;
+           
+               
             }
-            
-
-
-
-
-
+       
+          
             Console.ReadLine();
         }
     }
