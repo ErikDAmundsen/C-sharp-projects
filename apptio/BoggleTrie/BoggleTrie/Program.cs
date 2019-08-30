@@ -7,8 +7,8 @@ public class Boggle
 
     static readonly int SIZE = 26;
 
-    static readonly int M = 3;
-    static readonly int N = 3;
+    static readonly int M = 4;
+    static readonly int N = 4;
 
 
     public class TrieNode
@@ -145,7 +145,7 @@ public class Boggle
     public static void Main(String[] args)
     {
 
-        String[] dictionary = { "FOR", "FORM", "FAR", "ARM" };
+        String[] dictionary = { "FOR", "FORM", "FAR", "ARM", "WEST" };
 
 
         TrieNode root = new TrieNode();
