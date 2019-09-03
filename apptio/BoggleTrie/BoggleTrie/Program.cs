@@ -145,7 +145,7 @@ public class Boggle
     public static void Main(String[] args)
     {
 
-        String[] dictionary = { "FOR", "FORM", "FAR", "ARM", "WEST" };
+        String[] dictionary = { "FOR", "FORM", "FAR", "ARM", "WEST","OAR","WEB" };
 
 
         TrieNode root = new TrieNode();
