@@ -72,8 +72,8 @@ X T D I
 List<String> findWords(List<String> dictionary, char[][] board) {
 */
         DateTime start_time = DateTime.Now;
-
-        char[,] board = {
+          
+            char[,] board = {
                     {'F','O','P','W'},
                     { 'A','R','M','E' },
                     {'U','L','S','B' },

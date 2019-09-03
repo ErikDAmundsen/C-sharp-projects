@@ -30,7 +30,7 @@ X T D I
 // Implement me
 List<String> findWords(List<String> dictionary, char[][] board) {
 */
-
+            DateTime start_time = DateTime.Now;
 
             string[,] board = new string[,]
             {
@@ -47,8 +47,6 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 "FOR",
                 "FORM",
                 "OAR",
-                "WEB",
-                "WEST",
                 "FROM",
                 "ARM",
                 "RAUL",
@@ -84,12 +82,13 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 for (int Row = 0; Row <= 3; Row++)
                 {
 
+
                     bool[,] visited = new bool[4, 4];
 
-                    if (first.Contains(board[Row, Col]))
-                    {
+                    //if (first.Contains(board[Row, Col]))
+                    //{
                         traverseAdjacent(dict, "", Row, Col, visited);
-                    }
+                    //}
 
 
                 }
@@ -139,7 +138,9 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
             }
 
-
+        
+            TimeSpan elapsed = (DateTime.Now - start_time);
+            Console.WriteLine("{0} time to complete", elapsed);
             Console.ReadLine();
         }
     }
