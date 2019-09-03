@@ -1,170 +1,146 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using SimpleTrie;
-using static System.Net.Mime.MediaTypeNames;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SchnappiSchnap.Solvers
+namespace Boggle
 {
-    struct SolverResults
+    class Program
     {
-        public string[] Words { get; }
-        public int Score { get; }
-
-        public SolverResults(string[] words, int score)
+        static void Main(string[] args)
         {
-            Words = words;
-            Score = score;
+
+
+            /*
+F O P W
+A R M E
+U L S B
+X T D I
+
+- Assume list of dictionary words (list of sorted strings) as input
+- Write code that finds all valid words in the 4x4 matrix 
+- Words must be a minimum of 3 letters long
+- Can only follow adjacent cells to form words (up-left, up, up-right,right,down-right,down,down-left,left)
+- Cannot revisit same letter within the same word
+- Can reuse dice within different words
+- Can extend words to make more words (FORM, FORMS)
+
+// Implement me
+List<String> findWords(List<String> dictionary, char[][] board) {
+*/
+
+
+            string[,] board = new string[,]
+            {
+                {"F","O","P","W"},
+                {"A","R","M","E" },
+                {"U","L","S","B" },
+                {"X", "T", "D","I" }
+
+            };
+            List<string> dict = new List<string>
+            {
+
+                "FAUX",
+                "FOR",
+                "FORM",
+                "OAR",
+                "WEB",
+                "WEST",
+                "FROM",
+                "ARM",
+                "RAUL",
+                "BEST",
+                "ARMS",
+                "FAULT",
+                "RUT",
+
+
+            };
+            string[] first = new string[dict.Count];
+
+    //for (int W = 0; W<=dict.Count;W++)
+    //        {
+    //            first[W] = dict[W].First<char>
+    //        }
+
+            int count = 0;
+            foreach (string word in dict)
+            {
+               
+                first[count] = word[0].ToString();
+                count += 1;
+            }
+
+            //string check = "";
+            List<String> result = new List<string>();
+
+            for (int Col = 0; Col <= 3; Col++)
+            {
+
+
+                for (int Row = 0; Row <= 3; Row++)
+                {
+
+                    bool[,] visited = new bool[4, 4];
+
+                    if (first.Contains(board[Row, Col]))
+                    {
+                        traverseAdjacent(dict, "", Row, Col, visited);
+                    }
+
+
+                }
+
+
+            }
+
+
+
+            void traverseAdjacent(List<string> dictionary, string checker, int Row, int Col, bool[,] visited)
+            {
+                // finding adjacent cells and recurse
+
+
+                if (Row < 0 || Row > 3 || Col < 0 || Col > 3)
+                {
+                    return;
+
+                }
+                if (visited[Row, Col] == true)
+                {
+                    return;
+                }
+                checker += board[Row, Col];
+                visited[Row, Col] = true;
+
+                if (checker.Length >= 3 && dictionary.Contains(checker))
+                {
+                    result.Add(checker);
+                    Console.WriteLine("Congratulations you found a word! {0}", checker);
+
+
+                }
+
+
+                for (int vert = -1; vert <= 1; vert++)
+                {
+                    for (int horiz = -1; horiz <= 1; horiz++)
+                    {
+
+                        traverseAdjacent(dictionary, checker, Row + vert, Col + horiz, visited);
+
+                    }
+                }
+                visited[Row, Col] = false;
+
+
+            }
+
+
+            Console.ReadLine();
         }
     }
-
-    class BoggleSolver
-    {
-        private struct Coordinate
-        {
-            public int X { get; }
-            public int Y { get; }
-
-            public Coordinate(int x, int y)
-            {
-                X = x;
-                Y = y;
-            }
-        }
-
-        private readonly Trie trie;
-        private readonly string[,] board;
-        private HashSet<string> words = new HashSet<string>();
-        private int score;
-
-        public BoggleSolver(Trie trie, string[,] board)
-        {
-            this.trie = trie;
-
-            this.board = board;
-            for (int x = 0; x < this.board.GetLength(0); ++x)
-            {
-                for (int y = 0; y < this.board.GetLength(1); ++y)
-                {
-                    this.board[y, x] = this.board[y, x].ToLower();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Finds all valid words in the Boggle board.
-        /// </summary>
-        /// <returns>A struct containing the results of the search.</returns>
-        public SolverResults Solve()
-        {
-            for (int x = 0; x < board.GetLength(0); ++x)
-            {
-                for (int y = 0; y < board.GetLength(1); ++y)
-                {
-                    string letter = board[y, x];
-                    Coordinate point = new Coordinate(x, y);
-
-                    Solve(letter, new List<Coordinate> { point });
-                }
-            }
-
-            string[] finalWords = new string[words.Count];
-            words.CopyTo(finalWords);
-            Array.Sort(finalWords, (a, b) => b.Length.CompareTo(a.Length));
-
-            return new SolverResults(finalWords, score);
-        }
-
-        /// <summary>
-        /// Recursively solves the Boggle board, given a starting point.
-        /// </summary>
-        /// <param name="letters">The prefix of the word to solve.</param>
-        /// <param name="visited">The coordinates of the letters already used.</param>
-        private void Solve(string letters, List<Coordinate> visited)
-        {
-            Coordinate currentPoint = visited[visited.Count - 1];
-
-            // To be valid in Boggle, a word has to be 3 letters or longer.
-            if (letters.Length > 2 && trie.IsWord(letters))
-            {
-                words.Add(letters);
-                score += GetScore(letters);
-            }
-
-            // Stop looking for words starting with newLetters if no such
-            // word exists.
-            if (!trie.IsPrefix(letters))
-                return;
-
-            foreach (Coordinate neighbour in GetNeighbours(currentPoint))
-            {
-                // You cannot use the same letter cube more than one in a word.
-                if (visited.Contains(neighbour))
-                    continue;
-
-                visited.Add(neighbour);
-                Solve(letters + board[neighbour.Y, neighbour.X], visited);
-                visited.Remove(neighbour);
-            }
-        }
-
-        /// <summary>
-        /// Finds the Boggle score of the specified word.
-        /// </summary>
-        /// <param name="word">The word to score.</param>
-        /// <returns>The score of the word.</returns>
-        private int GetScore(string word)
-        {
-            if (word.Length <= 4)
-                return 1;
-            else if (word.Length <= 5)
-                return 2;
-            else if (word.Length <= 6)
-                return 3;
-            else if (word.Length <= 7)
-                return 5;
-            else
-                return 11;
-        }
-
-        /// <summary>
-        /// Returns the coordinates one space away vertically, horizontally and diagonally. 
-        /// </summary>
-        /// <param name="point">The coordinate to find the neighbours of.</param>
-        /// <returns>An IEnumberable of neighbour coordinates.</returns>
-        private IEnumerable<Coordinate> GetNeighbours(Coordinate point)
-        {
-            for (int i = -1; i <= 1; ++i)
-            {
-                for (int j = -1; j <= 1; ++j)
-                {
-                    // Don't pick the point itself. 
-                    if (i == 0 && j == 0)
-                        continue;
-
-                    int col = point.X + j;
-                    int row = point.Y + i;
-
-                    // Don't pick a coordinate off the board.
-                    if (col < 0 || col > (board.GetLength(0) - 1) || row < 0 || row > (board.GetLength(1) - 1))
-                        continue;
-
-                    yield return new Coordinate(col, row);
-                }
-            }
-        }
-    }
- 
-    
- 
-   
-    
-            static void Main()
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
-            }
-        
-    
 }
-

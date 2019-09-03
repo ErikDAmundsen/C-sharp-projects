@@ -9,19 +9,20 @@ namespace Boggle
     class Program
     {
 
-       
+         
         static readonly int alphabetCount = 26;
 
-       
-       
+
+
+      
         public class TrieNode
         {
             public TrieNode[] Child = new TrieNode[alphabetCount];
 
-            
+           
             public bool leaf;
 
-           
+         
             public TrieNode()
             {
                 leaf = false;
@@ -30,7 +31,7 @@ namespace Boggle
             }
         }
 
-         
+      
         static void insert(TrieNode root, String Key)
         {
             int n = Key.Length;
@@ -46,7 +47,7 @@ namespace Boggle
                 pChild = pChild.Child[index];
             }
 
-           
+             
             pChild.leaf = true;
         }
 
@@ -86,17 +87,17 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 "FOR",
                 "FORM",
                 "OAR",
-                "WEB",
-                "WEST",
-                "FROM",
-                "XTD"
-              
-
-
+                "FROM",             
+                "ARM",
+                "RAUL",
+                "BEST",
+                "ARMS",
+                "FAULT",
+                "RUT",
 
             };
 
-
+ 
             TrieNode root = new TrieNode();
             int n = dict.Length;
             for (int i = 0; i < n; i++)
@@ -106,6 +107,8 @@ List<String> findWords(List<String> dictionary, char[][] board) {
             List<string> result = new List<string>();
             string str = "";
 
+              TrieNode pChild = root;
+
             for (int Col = 0; Col <= 3; Col++)
             {
 
@@ -114,16 +117,16 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 {
                     bool[,] visited = new bool[4, 4];
 
-                    TrieNode pChild = root;
+                  
                     if (pChild.Child[(board[Col, Row]) - 'A'] != null)
                     {
-                        str = str + board[Col, Row];
-                        traverseAdjacent( dict, "", Row, Col, visited, root);
-                       
+                        str = str + board[Row, Col];
+                        traverseAdjacent(dict, "", Row, Col, visited, root);
+                      
                         str = "";
                     }
 
-              
+
 
 
                 }
@@ -136,8 +139,8 @@ List<String> findWords(List<String> dictionary, char[][] board) {
             void traverseAdjacent(String[] dictionary, string checker, int Row, int Col, bool[,] visited, TrieNode Root)
             {
                 // finding adjacent cells and recurse
+               
 
-                
                 if (Row < 0 || Row > 3 || Col < 0 || Col > 3)
                 {
                     return;
@@ -147,41 +150,58 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 {
                     return;
                 }
-               
+
 
                 checker += board[Row, Col];
                 visited[Row, Col] = true;
+                
                 if (checker.Length >= 3 && dictionary.Contains(checker))
 
-                {
-                    result.Add(checker);
-                    Console.WriteLine("Congratulations you found a word! {0}", checker);
 
+                {
+                    if (!result.Contains(checker))
+                    {
+
+
+                        result.Add(checker);
+                        Console.WriteLine("Congratulations you found a word! {0}", checker);
+                    }
 
                 }
-
               
-
-
-                        for (int vert = -1; vert <= 1; vert++)
-                        {
-                            for (int horiz = -1; horiz <= 1; horiz++)
+                for (int K = 0; K < alphabetCount; K++)
+                {
+                    if (Root.Child[K] != null)
+                    {
+                          
+                        char ch = (char)(K + 'A');
+                       
+                        
+                            for (int vert = -1; vert <= 1; vert++)
                             {
+                                for (int horiz = -1; horiz <= 1; horiz++)
+                                {
+                                
+                                    traverseAdjacent(dictionary, checker, Row + horiz, Col + vert, visited, Root.Child[K]);
 
-                                traverseAdjacent(dictionary, checker, Row + vert, Col + horiz, visited, Root);
 
                             }
-                   
+                            }
+                       
+
+                    }
 
                 }
-                visited[Row, Col] = false;
 
+                visited[Row, Col] = false;
 
             }
 
-
+           
             Console.ReadLine();
         }
     }
 }
+
+
 
