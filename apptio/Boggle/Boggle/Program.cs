@@ -12,9 +12,7 @@ namespace Boggle
        
         static readonly int alphabetCount = 26;
 
-        static readonly int M = 4;
-        static readonly int N = 4;
-
+       
        
         public class TrieNode
         {
