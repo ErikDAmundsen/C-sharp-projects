@@ -9,7 +9,6 @@ namespace Boggle
     class Program
     {
 
-         
         static readonly int alphabetCount = 26;
 
 
@@ -72,8 +71,9 @@ X T D I
 // Implement me
 List<String> findWords(List<String> dictionary, char[][] board) {
 */
+        DateTime start_time = DateTime.Now;
 
-            char[,] board = {
+        char[,] board = {
                     {'F','O','P','W'},
                     { 'A','R','M','E' },
                     {'U','L','S','B' },
@@ -197,7 +197,8 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
             }
 
-           
+           TimeSpan elapsed = (DateTime.Now - start_time);
+            Console.WriteLine("{0} time to complete", elapsed);
             Console.ReadLine();
         }
     }
