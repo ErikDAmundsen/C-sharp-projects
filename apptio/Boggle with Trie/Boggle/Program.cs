@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +15,15 @@ namespace Boggle
 
 
 
-      
+
         public class TrieNode
         {
             public TrieNode[] Child = new TrieNode[alphabetCount];
 
-           
+
             public bool leaf;
 
-         
+
             public TrieNode()
             {
                 leaf = false;
@@ -30,7 +32,7 @@ namespace Boggle
             }
         }
 
-      
+
         static void insert(TrieNode root, String Key)
         {
             int n = Key.Length;
@@ -46,7 +48,7 @@ namespace Boggle
                 pChild = pChild.Child[index];
             }
 
-             
+
             pChild.leaf = true;
         }
 
@@ -59,7 +61,6 @@ F O P W
 A R M E
 U L S B
 X T D I
-
 - Assume list of dictionary words (list of sorted strings) as input
 - Write code that finds all valid words in the 4x4 matrix 
 - Words must be a minimum of 3 letters long
@@ -67,12 +68,11 @@ X T D I
 - Cannot revisit same letter within the same word
 - Can reuse dice within different words
 - Can extend words to make more words (FORM, FORMS)
-
 // Implement me
 List<String> findWords(List<String> dictionary, char[][] board) {
 */
-        DateTime start_time = DateTime.Now;
-          
+            DateTime start_time = DateTime.Now;
+
             char[,] board = {
                     {'F','O','P','W'},
                     { 'A','R','M','E' },
@@ -87,7 +87,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 "FOR",
                 "FORM",
                 "OAR",
-                "FROM",             
+                "FROM",
                 "ARM",
                 "RAUL",
                 "BEST",
@@ -97,7 +97,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
             };
 
- 
+
             TrieNode root = new TrieNode();
             int n = dict.Length;
             for (int i = 0; i < n; i++)
@@ -107,7 +107,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
             List<string> result = new List<string>();
             string str = "";
 
-              TrieNode pChild = root;
+            TrieNode pChild = root;
 
             for (int Col = 0; Col <= 3; Col++)
             {
@@ -117,12 +117,12 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                 {
                     bool[,] visited = new bool[4, 4];
 
-                  
-                    if (pChild.Child[(board[Col, Row]) - 'A'] != null)
+
+                    if (pChild.Child[(board[Row, Col]) - 'A'] != null)
                     {
                         str = str + board[Row, Col];
                         traverseAdjacent(dict, "", Row, Col, visited, root);
-                      
+
                         str = "";
                     }
 
@@ -139,7 +139,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
             void traverseAdjacent(String[] dictionary, string checker, int Row, int Col, bool[,] visited, TrieNode Root)
             {
                 // finding adjacent cells and recurse
-               
+
 
                 if (Row < 0 || Row > 3 || Col < 0 || Col > 3)
                 {
@@ -154,7 +154,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
                 checker += board[Row, Col];
                 visited[Row, Col] = true;
-                
+
                 if (checker.Length >= 3 && dictionary.Contains(checker))
 
 
@@ -168,26 +168,26 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                     }
 
                 }
-              
+
                 for (int K = 0; K < alphabetCount; K++)
                 {
                     if (Root.Child[K] != null)
                     {
-                          
+
                         char ch = (char)(K + 'A');
-                       
-                        
-                            for (int vert = -1; vert <= 1; vert++)
+
+
+                        for (int vert = -1; vert <= 1; vert++)
+                        {
+                            for (int horiz = -1; horiz <= 1; horiz++)
                             {
-                                for (int horiz = -1; horiz <= 1; horiz++)
-                                {
-                                
-                                    traverseAdjacent(dictionary, checker, Row + horiz, Col + vert, visited, Root.Child[K]);
+
+                                traverseAdjacent(dictionary, checker, Row + horiz, Col + vert, visited, Root.Child[K]);
 
 
                             }
-                            }
-                       
+                        }
+
 
                     }
 
@@ -197,12 +197,13 @@ List<String> findWords(List<String> dictionary, char[][] board) {
 
             }
 
-           TimeSpan elapsed = (DateTime.Now - start_time);
+            TimeSpan elapsed = (DateTime.Now - start_time);
             Console.WriteLine("{0} time to complete", elapsed);
             Console.ReadLine();
         }
     }
 }
+
 
 
 
