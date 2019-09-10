@@ -174,7 +174,7 @@ List<String> findWords(List<String> dictionary, char[][] board) {
                     if (Root.Child[K] != null)
                     {
 
-                        char ch = (char)(K + 'A');
+                        
 
 
                         for (int vert = -1; vert <= 1; vert++)
